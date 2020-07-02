@@ -113,7 +113,7 @@ public class MediaInfoBuilder {
                     MediaTrack track = new MediaTrack.Builder(i, MediaTrack.TYPE_TEXT)
                     .setName(trackData.getString("title"))
                     .setSubtype(MediaTrack.SUBTYPE_SUBTITLES)
-                    .setContentId(trackData.getString("url"))
+                    .setContentId(trackData.getString("uri"))
                     .setContentType(
                         trackData.hasKey("type")
                             ? trackData.getString("type")
