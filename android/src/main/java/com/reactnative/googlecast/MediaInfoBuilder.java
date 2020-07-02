@@ -104,8 +104,8 @@ public class MediaInfoBuilder {
                         : MediaInfo.STREAM_TYPE_BUFFERED;
 
         List mediaTracks = new ArrayList();
-        if (parameters.hasKey("tracks") && parameters.getArray("tracks") != null) {
-            ReadableArray tracks = parameters.getArray("tracks");
+        if (parameters.hasKey("mediaTracks") && parameters.getArray("mediaTracks") != null) {
+            ReadableArray tracks = parameters.getArray("mediaTracks");
 
                 for (int i = 0; i < tracks.size(); i++) {
                 ReadableMap trackData = tracks.getMap(i);
@@ -113,7 +113,7 @@ public class MediaInfoBuilder {
                     MediaTrack track = new MediaTrack.Builder(i, MediaTrack.TYPE_TEXT)
                     .setName(trackData.getString("title"))
                     .setSubtype(MediaTrack.SUBTYPE_SUBTITLES)
-                    .setContentId(trackData.getString("id"))
+                    .setContentId(trackData.getString("url"))
                     .setContentType(
                         trackData.hasKey("type")
                             ? trackData.getString("type")
